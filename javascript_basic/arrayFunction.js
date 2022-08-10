@@ -72,24 +72,10 @@ console.log(arr6);
 const number = [0,1,4,2,7,20,10,32,15];
 
 number.sort();
-console.log(number); // 크기 순서대로 배열 안됨
+console.log(number); // 크기 순서대로 배열 안됨 -> 요소들이 문자열이라고 생각하고 배열하기 때문
 
-const compare = (a,b) => {
-  // 크다
-  if(a > b) {
-    // a 뒤로 이동
-    return 1;
-  }
-  // 작다
-  if(a < b) {
-    // a 앞으로 이동
-    return -1;
-  }
-  // 같다 -> a 자리 그대로
-  return 0;
-};
-
-number.sort(compare);
+// 두 값을 비교하는 함수를 매개변수로 sort 내장함수에 넘겨줌
+number.sort((a,b) => a-b);
 
 console.log(number);
 
