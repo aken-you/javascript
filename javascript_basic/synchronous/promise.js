@@ -27,10 +27,10 @@ const res = isPositiveP([]);
 res
   .then((res) =>{
   console.log("작업 성공 : ", res);
-})
+  })
   .catch((err) => {
   console.log("작업 실패 : ", res);
-})
+  })
 // isPositive(
 //   [5],
 //   (res) => {
