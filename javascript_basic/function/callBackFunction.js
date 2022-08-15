@@ -1,5 +1,5 @@
 // callback 함수: 변수(파라미터)로 함수를 전달 받아 함수 내부에서 실행하는 함수
-// 익명의 함수 사용 -> 함수 낸부에서 실행되기 때문에
+// 익명의 함수 사용 -> 함수 내부에서 실행되기 때문에
 // 함수의 이름만 넘기기
 
 function checkMood(mood, goodCallback, badCallBack) {

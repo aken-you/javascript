@@ -1,3 +1,5 @@
+// Promise
+
 function isPositive(number, resolve, reject) {
   setTimeout(() => {
     if (typeof number === "number") {
@@ -7,6 +9,12 @@ function isPositive(number, resolve, reject) {
     }
   }, 2000);
 }
+
+// executor(실행 함수)
+// new Promise에 전달되는 함수
+// executor의 인수 resolve와 reject는 자바스크립트에서 자체적으로 제공하는 콜백
+// 인수로 넘겨준 콜백 중 하나를 반드시 호출 -> 객체의 상태가 변화(처리된 프로미스)
+// 보통 시간이 걸리는 일을 수행
 
 function isPositiveP(number) {
   const executor = (resolve, reject) => {
@@ -24,6 +32,10 @@ function isPositiveP(number) {
 
 const res = isPositiveP([]);
 
+// .then의 첫 번째 인수는 프라미스가 이행되었을 때 실행되는 함수, 실행 결과를 받음
+// .then의 두 번째 인수는 프라미스가 거부되었을 때 실행되는 함수, 에러를 받음
+// 작업이 성공적으로 처리된 경우만 다루고 싶으면 인수 하나만 전달
+// .catch(f)는 .then(null, f)과 같다.
 res
   .then((res) =>{
   console.log("작업 성공 : ", res);
@@ -31,6 +43,7 @@ res
   .catch((err) => {
   console.log("작업 실패 : ", res);
   })
+
 // isPositive(
 //   [5],
 //   (res) => {
@@ -50,6 +63,7 @@ function taskA(a, b) {
     }, 3000);
   });
 }
+
 function taskB(a) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {

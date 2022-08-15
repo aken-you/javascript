@@ -2,7 +2,7 @@
 // a ?? b
 // a가 null도 아니고 undefined도 아니면 a
 // b
-// (a !== null && a != undefined) ? a : b;
+// (a !== null && a !== undefined) ? a : b;
 let a;
 a = a ?? 10;
 console.log(a); // 10
