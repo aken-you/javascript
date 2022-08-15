@@ -25,5 +25,13 @@ arr.push(6);
 arr.push({key: "value"});
 console.log(arr);
 
+// 배열의 가장 앞 요소 삭제
+arr.shift()
+console.log(arr);
+
+// 배열의 가장 마지막 요소 삭제
+arr.pop()
+console.log(arr);
+
 // 배열의 길이 -> 자동으로 갱신
 console.log(arr.length);

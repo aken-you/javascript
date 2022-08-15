@@ -4,10 +4,11 @@ if (a) {
   console.log("False");
 }
 
-// truethy(참 같은 값)
+// truthy(참 같은 값): boolean을 기대하는 문맥에서 true로 평가되는 값
+// 예) {}, [], "0", "false", infinity, -infinity
 
 // falsy(거짓 같은 값)
-// 0 -0 0n "" null undefined NaN
+// false, 0, -0, 0n, "", null, undefined와 NaN 
 
 // 활용
 
@@ -18,7 +19,7 @@ const getAge = (person) => {
   return person.age;
 };
 
-let person = { age : 25 };
+let person = { age: 25 };
 const age = getAge(person);
 console.log(age);
 

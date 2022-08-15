@@ -1,5 +1,7 @@
+// 프로퍼티(property): 'key: value' 쌍으로 구성
+
 let person = {
-  key: "value", // 프로퍼티(객체 프로퍼티, 뜻: 속성)
+  key: "value", 
   key1: 123,
   key2: true,
   key3: undefined,
@@ -33,8 +35,15 @@ console.log(person2);
 person2.name1 = "jay";
 console.log(person2);
 
+// 프로퍼티 삭제
+// delete는 단순히 객체와 속성과의 연결을 끊을 뿐 실제로 메모리에서 제거하는 것은 아님
+// null이나 undefined로 설정하는 것이 낫다
+delete person2.location; 
+person2.gender = null;
+console.log(person2);
 
-// const로 선언한 객체는 오류 x
+// const로 선언한 객체는 수정할 수 있다.
+// 아래 예시에서 person3을 전체적으로 설정하려고 할 때만 오류
 const person3 = {
   name2: 'hay',
   age: 34,
@@ -44,21 +53,23 @@ const person3 = {
 };
 // 프로퍼티를 함수로 갖는 것: 객체의 method vs 프로퍼티를 함수로 갖지 않는 것: member
 
-
 person3.name2 = 'jake';
 console.log(person3);
 person3.say();
-// 오류 x 이유 -> person3 상수 자체를 수정하는 행동이 아님
 
-// 프로퍼티 삭제
-// delete는 단순히 객체와 속성과의 연결을 끊을 뿐 실제로 메모리에서 제거하는 것은 아님
-// null이나 undefined로 설정하는 것이 낫다
-delete person2.location; 
-delete person2['gender'];
-console.log(person2);
+// 대괄호 표기법
+// 점은 유요한 변수 식별자(공백 x, 숫자로 시작 x, $와 _를 제외한 특수 문자 x)인 경우에만 사용
+const meal = {
+  한식: "비빔밥",
+  일식: "초밥",
+  양식: "스테이크",
+  중식: "멘보샤"
+};
 
-person3.age = null;
-console.log(person3);
+const key = "한식";
+
+console.log(meal.key); // undefined
+console.log(meal[key]); // 비빔밥
 
 // this
 let girl = {
@@ -81,6 +92,7 @@ console.log(`${'name' in girl}`); // true
 console.log(`${'location' in girl}`); // false
 
 // value가 객체에 존재하는지 확인
-let girlValues = Object.values(girl);
+let girlValues = Object.values(girl); // 리스트 형태
 console.log(girlValues.includes('july'));
 console.log(girlValues.includes(26));
+
