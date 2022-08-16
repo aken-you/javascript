@@ -68,6 +68,36 @@ const meal = {
 
 const key = '한식';
 
+delete person2.location; 
+person2.gender = null;
+console.log(person2);
+
+// const로 선언한 객체는 수정할 수 있다.
+// 아래 예시에서 person3을 전체적으로 설정하려고 할 때만 오류
+const person3 = {
+  name2: 'hay',
+  age: 34,
+  say: function() {
+    console.log("안녕");
+  } 
+};
+// 프로퍼티를 함수로 갖는 것: 객체의 method vs 프로퍼티를 함수로 갖지 않는 것: member
+
+person3.name2 = 'jake';
+console.log(person3);
+person3.say();
+
+// 대괄호 표기법
+// 점은 유요한 변수 식별자(공백 x, 숫자로 시작 x, $와 _를 제외한 특수 문자 x)인 경우에만 사용
+const meal = {
+  한식: "비빔밥",
+  일식: "초밥",
+  양식: "스테이크",
+  중식: "멘보샤"
+};
+
+const key = "한식";
+
 console.log(meal.key); // undefined
 console.log(meal[key]); // 비빔밥
 
