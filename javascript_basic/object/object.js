@@ -111,7 +111,6 @@ let girl = {
   },
 };
 
-// this는
 
 girl.say();
 

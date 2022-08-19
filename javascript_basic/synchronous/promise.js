@@ -2,10 +2,10 @@
 
 function isPositive(number, resolve, reject) {
   setTimeout(() => {
-    if (typeof number === "number") {
-      resolve(number >= 0 ? "양수" : "음수");
+    if (typeof number === 'number') {
+      resolve(number >= 0 ? '양수' : '음수');
     } else {
-      reject("주어진 값이 숫자형 값이 아닙니다.");
+      reject('주어진 값이 숫자형 값이 아닙니다.');
     }
   }, 2000);
 }
@@ -19,10 +19,10 @@ function isPositive(number, resolve, reject) {
 function isPositiveP(number) {
   const executor = (resolve, reject) => {
     setTimeout(() => {
-      if (typeof number === "number") {
-        resolve(number >= 0 ? "양수" : "음수");
+      if (typeof number === 'number') {
+        resolve(number >= 0 ? '양수' : '음수');
       } else {
-        reject("주어진 값이 숫자형 값이 아닙니다.");
+        reject('주어진 값이 숫자형 값이 아닙니다.');
       }
     }, 2000);
   };
@@ -34,15 +34,19 @@ const res = isPositiveP([]);
 
 // .then의 첫 번째 인수는 프라미스가 이행되었을 때 실행되는 함수, 실행 결과를 받음
 // .then의 두 번째 인수는 프라미스가 거부되었을 때 실행되는 함수, 에러를 받음
+res.then(
+  (result) => console.log('작업 성공: ', result),
+  (error) => console.log('작업 실패: ', error)
+);
 // 작업이 성공적으로 처리된 경우만 다루고 싶으면 인수 하나만 전달
 // .catch(f)는 .then(null, f)과 같다.
 res
-  .then((res) =>{
-  console.log("작업 성공 : ", res);
+  .then((res) => {
+    console.log('작업 성공 : ', res);
   })
   .catch((err) => {
-  console.log("작업 실패 : ", res);
-  })
+    console.log('작업 실패 : ', res);
+  });
 
 // isPositive(
 //   [5],
@@ -53,7 +57,6 @@ res
 //     console.log("실패 하였음 : ", err);
 //   }
 // );
-
 
 function taskA(a, b) {
   return new Promise((resolve, reject) => {
@@ -78,36 +81,31 @@ function taskC(a) {
       const res = a * -1;
       resolve(res);
     }, 2000);
-  })
+  });
 }
 
 taskA(3, 4)
   .then((a_res) => {
-    console.log("A Result : ", a_res);
+    console.log('A Result : ', a_res);
     return taskB(a_res);
   })
   .then((b_res) => {
-    console.log("B result : ", b_res);
+    console.log('B result : ', b_res);
     return taskC(b_res);
   })
   .then((c_res) => {
-    console.log("C Result : ", c_res);
+    console.log('C Result : ', c_res);
   });
 
-
-
-
 taskA(3, 4).then((a_res) => {
-  console.log("A result : ", a_res);
+  console.log('A result : ', a_res);
   taskB(a_res).then((b_res) => {
-    console.log("B result : ", b_res);
+    console.log('B result : ', b_res);
     taskC(b_res).then((c_res) => {
-      console.log("C result : ", c_res);
+      console.log('C result : ', c_res);
     });
   });
 });
-
-
 
 // 콜백 지옥
 // taskA(3, 4, (a_res) => {
