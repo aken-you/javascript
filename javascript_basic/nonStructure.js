@@ -4,7 +4,7 @@ var foo = ['one', 'two', 'three'];
 var [red, yellow, green] = foo;
 console.log(red, yellow, green);
 
-// 선언에서 분리한 할당
+// 에서 분리한 할당
 var a, b;
 [a, b] = [1, 2];
 console.log(a, b);
@@ -57,13 +57,13 @@ console.log(one1, two2, three3, myName, four4);
 const ironMan = {
   name: '토니 스타크',
   actor: '로버트 다우니 주니어',
-  alias: '아이언맨'
+  alias: '아이언맨',
 };
 
 const captainAmerica = {
   name: '스티븐 로저스',
   actor: '크리스 에반스',
-  alias: '캡틴 아메리카'
+  alias: '캡틴 아메리카',
 };
 
 // function print(hero) {
@@ -73,11 +73,11 @@ const captainAmerica = {
 // print(captainAmerica);
 
 function print(hero) {
-  const {alias, name, actor} = hero;
+  const { alias, name, actor } = hero;
   console.log(`${alias}(${name}) 역할을 맡은 배우는 ${actor}입니다.`);
 }
 
-function print({alias, name, actor}) {
+function print({ alias, name, actor }) {
   console.log(`${alias}(${name}) 역할을 맡은 배우는 ${actor}입니다.`);
 }
 

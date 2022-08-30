@@ -113,7 +113,7 @@ let rabbit4 = {
   __proto__: animal4,
 };
 
-console.log(Object.keys(rabbit4)); // [ 'jumps' ]
+console.log(rabbit4); // [ 'jumps' ]
 for (let prop in rabbit4) console.log(prop); // jumps, eats
 
 // for ... in은 오직 열거 가능한 프로퍼티만 순회 대상에 포함

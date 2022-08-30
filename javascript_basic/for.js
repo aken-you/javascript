@@ -10,6 +10,12 @@ let person = {
   tall: 170
 };
 
+// for ... in 반복문
+for (key in person) {
+  console.log(key);
+} // name, age, tall
+
+
 // 키만 출력
 const personKeys = Object.keys(person);
 for(let i = 0; i < personKeys.length; i++) {
