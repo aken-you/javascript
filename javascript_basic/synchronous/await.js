@@ -22,7 +22,7 @@ function delay(ms) {
     setTimeout(resolve, ms);
   });
 }
-
+// async 함수에서 return한 값은 then이나 await으로 받아야 함
 async function helloAsync() {
   await delay(3000); // delay 함수가 이행될 때까지 기다림
   return 'Hello Async';
@@ -33,3 +33,5 @@ async function main() {
 }
 
 main();
+
+// async함수에서 promise를 실패하는 경우 try catch로 처리

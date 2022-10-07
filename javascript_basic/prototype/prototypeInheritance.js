@@ -14,12 +14,12 @@ let rabbit = {
 rabbit.__proto__ = animal;
 
 // prototype이 참조하고 있는 객체인 animal에서 eats를 얻어낸다.(eats = 상속 프로퍼티)
-console.log(rabbit.eats);
-console.log(rabbit.jumps);
+console.log(rabbit.eats); // true
+console.log(rabbit.jumps); // true
 
 // 객체는 [[Prototype]]이라는 숨김 프로퍼티를 갖는다.
 // 이 숨김 프로퍼티 값이 null이거나 다른객체에 대한 참조가 됨
-console.log(animal.hasOwnProperty('eats'));
+console.log(animal.hasOwnProperty('eats')); // true
 
 // rabbit은 animal을 상속 받는다.
 

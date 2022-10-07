@@ -3,7 +3,7 @@ const arr = [1, 2, 3, 4];
 // 배열의 순회
 arr.forEach((elm) => console.log(elm));
 
-// 새로운 배열에 요소 넣기
+// 원본 배열과 똑같은 길이의 새로운 배열에 요소 넣기
 const newArr = arr.map((elm) => elm * 2);
 console.log(newArr);
 
@@ -113,3 +113,7 @@ while (index > -1) {
   index = a.indexOf('라');
 }
 console.log(a);
+
+let a = [1,2,3,4];
+b = a.filter(ele => ele > 2);
+console.log(b)

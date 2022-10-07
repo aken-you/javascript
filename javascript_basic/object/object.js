@@ -7,11 +7,28 @@ let person = {
   key3: undefined,
   key4: [1, 2],
   key5: function () {},
-}; // 객체 리터럴 방식
+}; 
 
 console.log(person);
 console.log(person.key1);
 console.log(person['key2']);
+
+// 객체 리터럴
+function sayNode() {
+  console.log('node');
+};
+const es = 'ES';
+const newObject = {
+  sayJs() {
+    console.log('js');
+  },
+  sayNode,
+  [es + 6]: 'wow es',
+};
+
+newObject.sayNode();
+newObject.sayJs();
+console.log(newObject.ES6);
 
 // 함수를 이용해 값 호출
 
@@ -88,7 +105,8 @@ console.log(person3);
 person3.say();
 
 // 대괄호 표기법
-// 점은 유요한 변수 식별자(공백 x, 숫자로 시작 x, $와 _를 제외한 특수 문자 x)인 경우에만 사용
+// 점은 유용한 변수 식별자(공백 x, 숫자로 시작 x, $와 _를 제외한 특수 문자 x)인 경우에만 사용
+// 대괄호 내에 들어가는 프로퍼티 이름은 반드시 문자열
 const meal = {
   한식: '비빔밥',
   일식: '초밥',
@@ -96,9 +114,7 @@ const meal = {
   중식: '멘보샤',
 };
 
-const key = '한식';
-
-console.log(meal.key); // undefined
+console.log(meal."한식"); // undefined
 console.log(meal[key]); // 비빔밥
 
 // this
@@ -123,6 +139,17 @@ console.log(`${'location' in girl}`); // false
 let girlValues = Object.values(girl); // 리스트 형태
 console.log(girlValues.includes('july'));
 console.log(girlValues.includes(26));
+
+// Object.entries(): 객체 자체의 enumberable [key, value]쌍의 배열을 반환
+const object1 = {
+  a:'some',
+  b: 42,
+};
+console.log(Object.entries(object1)); // [ [ 'a', 'some' ], [ 'b', 42 ] ]
+for (const [key, value] of Object.entries(object1)) {
+  console.log(`${key} : ${value}`);
+};
+
 
 // 객체 정렬 방식
 // 정수 프로퍼티는 자동으로 정렬, 그 외 프로퍼티는 객체에 추가한 순서 그대로 정렬

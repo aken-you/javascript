@@ -15,6 +15,7 @@ for (let x of arr) {
 
 // 3)
 arr.forEach((elm) => console.log(elm));
+arr.forEach((elm, idx) => console.log(elm, idx));
 
 // 배열의 가장 앞에 요소 추가
 arr.unshift(0);
@@ -36,6 +37,13 @@ console.log(arr);
 // 배열의 길이 -> 자동으로 갱신
 console.log(arr.length);
 
+// 배열에서 최댓값 최솟값 구하기
+arr = [1,2,3,4];
+console.log(Math.max(...arr)); // 4
+console.log(Math.max.apply(null,arr)); // 4
+console.log(Math.min(...arr)); // 1
+console.log(Math.min.apply(null,arr)); // 1
+
 // 2차원 배열 길이
 const b = [
   [1, 2, 4],
@@ -47,10 +55,16 @@ console.log(b[1].length); // 2
 
 // 배열의 중간 요소 삭제
 // splice(시작 index, 삭제 갯수)
-const target = ['가', '나', '다', '라', '마', '바'];
+let target = ['가', '나', '다', '라', '마', '바'];
 target.splice(2, 2); // 다 라 삭제
 console.log(target); // 가 나 마 바
 target.splice(2); // 마 이후로 다 삭제
 console.log(target); // 가 나
+
+target = ['가', '나', '다', '라', '마', '바'];
+target.splice(-3,2);
+console.log(target); // ["가","나","다","바"]
+
+// 배열의 임의의 위치에 요소 추가
 target.splice(1, 0, '캬'); // 1 index 앞에 캬 추가
 console.log(target); // 가 캬 나
